@@ -1,9 +1,7 @@
-module "example" {
-  source = var.module_source
-  version = var.module_version
+provider "aws" {
+  region = "us-east-2"
+}
 
-  instance_type = var.instance_type
-  instance_count = var.instance_count
-  vpc_id = var.vpc_id
-  subnet_ids = var.subnet_ids
+resource "aws_s3_bucket" "example" {
+  bucket = var.bucket_name
 }
